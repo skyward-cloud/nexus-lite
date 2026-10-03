@@ -1,0 +1,75 @@
+{
+    "SettingsVersion": 1.2,
+    "SimMode": "Multirotor",
+    "ClockType": "SteppableClock",
+    "Vehicles": {
+        "PX4": {
+            "VehicleType": "PX4Multirotor",
+            "UseSerial": false,
+            "UseTcp": true,
+            "TcpPort": 4560,
+            "ControlPortLocal": 14540,
+            "ControlPortRemote": 14580,
+            "LockStep": true,
+            "LocalHostIp": "192.168.138.1",
+            "Sensors": {
+                "Barometer": {
+                    "SensorType": 1,
+                    "Enabled": true,
+                    "PressureFactorSigma": 0.0001825
+                },
+                "Gps": {
+                    "SensorType": 3,
+                    "Enabled": true,
+                    "EphTimeConstant": 0.9,
+                    "EpvTimeConstant": 0.9,
+                    "EphInitial": 25,
+                    "EpvInitial": 25,
+                    "EphFinal": 0.1,
+                    "EpvFinal": 0.1,
+                    "EphMin3d": 3,
+                    "EphMin2d": 4,
+                    "UpdateLatency": 0.2,
+                    "UpdateFrequency": 50,
+                    "StartupDelay": 1
+                },
+                "Imu": {
+                    "SensorType": 2,
+                    "Enabled": true,
+                    "AngularRandomWalk": 0.3,
+                    "GyroBiasStabilityTau": 500,
+                    "GyroBiasStability": 4.6,
+                    "VelocityRandomWalk": 0.24,
+                    "AccelBiasStabilityTau": 800,
+                    "AccelBiasStability": 36
+                },
+                "LidarSensor1": {
+                    "SensorType": 6,
+                    "Enabled": true,
+                    "NumberOfChannels": 16,
+                    "RotationsPerSecond": 10,
+                    "PointsPerSecond": 100000,
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.1,
+                    "Roll": 0,
+                    "Pitch": 0,
+                    "Yaw": 0,
+                    "VerticalFOVUpper": 60,
+                    "VerticalFOVLower": -10,
+                    "HorizontalFOVStart": -180,
+                    "HorizontalFOVEnd": 180,
+                    "DrawDebugPoints": false,
+                    "DataFrame": "SensorLocalFrame"
+                }
+            },
+            "Parameters": {
+                "NAV_RCL_ACT": 0,
+                "NAV_DLL_ACT": 0,
+                "COM_OBL_ACT": 1,
+                "LPE_LAT": 47.641468,
+                "LPE_LON": -122.140165
+            }
+        }
+    }
+}

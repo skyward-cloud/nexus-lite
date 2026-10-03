@@ -1,0 +1,5 @@
+# px4_bridge lite 行为配置
+loop_hz: 20
+connection_timeout_ms: 1000
+realtime_timeout_ms: 300
+realtime_max_speed_mps: 2.0

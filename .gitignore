@@ -1,0 +1,13 @@
+**/build
+**/devel
+**/install
+**/log
+**/cmake-build-debug
+**/.idea
+**.bag
+**.csv
+**.bin
+**.zip
+**.ply
+**/__pycache__
+**/*.pyc

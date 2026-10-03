@@ -1,0 +1,18 @@
+# bridge_config.yaml
+# 用于 ros_gz_bridge 的配置文件，同时桥接激光雷达和 IMU 数据
+
+# ros2 run ros_gz_bridge parameter_bridge --ros-args -p config_file:=./bridge_config.yaml
+
+#### 1. 激光雷达配置 ####
+- ros_topic_name: "lidar/points"               # ROS 2 中的话题名（可自由指定）
+  gz_topic_name: "/scan/points"                # Gazebo 中原始的话题名
+  ros_type_name: "sensor_msgs/msg/PointCloud2" # ROS 2 消息类型
+  gz_type_name: "gz.msgs.PointCloudPacked"     # Gazebo 消息类型
+  direction: GZ_TO_ROS                         # 数据流向：从 Gazebo 到 ROS 2
+
+#### 2. IMU 配置 ####
+- ros_topic_name: "imu/data"                   # ROS 2 中的话题名（可自由指定）
+  gz_topic_name: "/world/room/model/drone260_0/link/base_link/sensor/imu_sensor/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"         # ROS 2 消息类型（标准 IMU）
+  gz_type_name: "gz.msgs.IMU"                  # Gazebo 消息类型
+  direction: GZ_TO_ROS                         # 数据流向：从 Gazebo 到 ROS 2

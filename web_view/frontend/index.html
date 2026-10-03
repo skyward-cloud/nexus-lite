@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nexus-lite · PX4 Bridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three.module.js",
+      "three/addons/": "./vendor/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <aside class="panel">
+      <header class="brand">
+        <div class="brand-mark">NL</div>
+        <div>
+          <div class="brand-name">nexus-lite</div>
+          <div class="brand-sub">PX4 Bridge 操作台</div>
+        </div>
+      </header>
+
+      <section class="block">
+        <h2>状态</h2>
+        <div class="status-grid" id="status-grid">
+          <div class="kv"><span>连接</span><b id="s-connected">—</b></div>
+          <div class="kv"><span>解锁</span><b id="s-armed">—</b></div>
+          <div class="kv"><span>模式</span><b id="s-mode">—</b></div>
+          <div class="kv"><span>生命周期</span><b id="s-life">—</b></div>
+          <div class="kv"><span>电量</span><b id="s-batt">—</b></div>
+          <div class="kv"><span>故障</span><b id="s-fail">—</b></div>
+          <div class="kv wide"><span>位置 ENU</span><b id="s-pos">—</b></div>
+          <div class="kv wide"><span>速度</span><b id="s-vel">—</b></div>
+          <div class="kv wide"><span>任务</span><b id="s-task">—</b></div>
+          <div class="kv wide"><span>错误</span><b id="s-err">—</b></div>
+          <div class="kv wide"><span>返航</span><b id="s-rth">—</b></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>控制</h2>
+        <div class="btn-row">
+          <button type="button" data-action="arm">解锁</button>
+          <button type="button" data-action="disarm">上锁</button>
+          <button type="button" data-action="takeoff" class="accent">起飞</button>
+          <button type="button" data-action="land" class="warn">降落</button>
+        </div>
+        <div class="btn-row">
+          <button type="button" data-action="hold">悬停 HOLD</button>
+          <button type="button" data-action="posctl">定点 POSCTL</button>
+          <button type="button" data-action="offboard">OFFBOARD</button>
+          <button type="button" data-action="rth">返航</button>
+        </div>
+        <div class="btn-row">
+          <button type="button" data-action="kill" class="danger">紧急停止</button>
+        </div>
+        <label class="field">
+          <span>起飞高度 z (m)</span>
+          <input id="takeoff-z" type="number" value="2.0" step="0.1" min="0.5" max="50" />
+        </label>
+        <p class="hint" id="cmd-hint">等待后端连接…</p>
+      </section>
+
+      <section class="block">
+        <h2>指点飞行</h2>
+        <div class="xyz-row">
+          <label class="field compact">
+            <span>X</span>
+            <input id="goto-x" type="number" value="0.0" step="0.1" />
+          </label>
+          <label class="field compact">
+            <span>Y</span>
+            <input id="goto-y" type="number" value="0.0" step="0.1" />
+          </label>
+          <label class="field compact span-row">
+            <span>Z</span>
+            <input id="goto-z" type="number" value="2.0" step="0.1" />
+          </label>
+        </div>
+        <label class="field">
+          <span>偏航 yaw (rad)</span>
+          <input id="goto-yaw" type="number" value="0.0" step="0.1" />
+        </label>
+        <div class="btn-row">
+          <button type="button" data-action="fill-pose">填入当前位姿</button>
+          <button type="button" data-action="goto" class="accent">飞往目标</button>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>遥操</h2>
+        <div class="nudge-meta">
+          <label class="field compact">
+            <span>步长 (m)</span>
+            <input id="nudge-step" type="number" value="0.5" step="0.1" min="0.05" max="5" />
+          </label>
+          <label class="field compact">
+            <span>转角 (°)</span>
+            <input id="nudge-yaw-deg" type="number" value="15" step="1" min="1" max="90" />
+          </label>
+        </div>
+        <div class="pad" aria-label="方向与旋转">
+          <button type="button" class="pad-btn" data-nudge="yaw_l" title="左转">↺</button>
+          <button type="button" class="pad-btn" data-nudge="fwd" title="前进">↑</button>
+          <button type="button" class="pad-btn" data-nudge="yaw_r" title="右转">↻</button>
+          <button type="button" class="pad-btn" data-nudge="left" title="左移">←</button>
+          <button type="button" class="pad-btn hold" data-nudge="hover" title="拉回当前位置">●</button>
+          <button type="button" class="pad-btn" data-nudge="right" title="右移">→</button>
+          <button type="button" class="pad-btn" data-nudge="up" title="上升">上</button>
+          <button type="button" class="pad-btn" data-nudge="back" title="后退">↓</button>
+          <button type="button" class="pad-btn" data-nudge="down" title="下降">下</button>
+        </div>
+        <p class="hint dim">机体水平系：↑前 ↓后 ←左 →右；按住可连续移动</p>
+      </section>
+
+      <section class="block">
+        <h2>点云</h2>
+        <div class="kv"><span>点数</span><b id="cloud-count">0</b></div>
+        <div class="kv"><span>刷新</span><b id="cloud-hz">—</b></div>
+      </section>
+    </aside>
+
+    <main class="viewport">
+      <canvas id="scene"></canvas>
+      <div class="overlay-hud">
+        <span id="hud-pos">pos —</span>
+        <span id="hud-mode">mode —</span>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+pywebview>=5.0
+# 系统 SciPy(1.8) 需要 numpy<1.25；勿装 numpy 2.x
+numpy>=1.22,<1.25
