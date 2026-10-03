@@ -24,6 +24,8 @@
 - Gazebo 仿真：Gazebo Harmonic / Fortress（与本机 `gz-transport` 一致）
 - AirSim 仿真（可选）：AirSim + `none_iris` SITL
 
+
+
 ### PX4 自定义机架 `drone260`
 
 Gazebo 默认机型为 `drone260`。在 PX4 源码中增加 POSIX 机架：
@@ -31,6 +33,8 @@ Gazebo 默认机型为 `drone260`。在 PX4 源码中增加 POSIX 机架：
 1. 复制 `ROMFS/px4fmu_common/init.d-posix/airframes/4001_gz_x500` 为 `5001_drone260`（或按 PX4 约定命名为 `5001_gz_drone260`）。
 2. 在同目录 `CMakeLists.txt` 中登记该文件。
 3. 重新编译 PX4 SITL。
+
+
 
 ## 编译
 
@@ -41,6 +45,8 @@ source /path/to/px4_msgs/install/setup.bash   # 按实际路径
 colcon build
 source install/setup.bash
 ```
+
+
 
 ## 环境变量
 
@@ -94,6 +100,8 @@ MicroXRCEAgent udp4 -p 8888
 ros2 launch px4_bridge bridge.launch.py
 ```
 
+
+
 ## 控制接口
 
 外部只发一次性任务，桥接**只保留最新一条**。非法任务会打日志并丢弃。
@@ -122,10 +130,11 @@ ros2 topic pub --once /px4_bridge/in/task_cmd px4_bridge_msgs/msg/TaskCommand "{
 
 ## 规划算法（可选）
 
-本仓库适配了 [SUPER](https://github.com/ZJU-FAST-Lab/SUPER) 与 [FUEL](https://github.com/HKUST-Aerial-Robotics/FUEL)。需先编译对应工作空间并 `source` 其 `install/setup.bash`。后续若有更实用的算法也会继续接入。
+本仓库适配了 [SUPER](https://github.com/ZJU-FAST-Lab/SUPER) 与 [FUEL](https://github.com/HKUST-Aerial-Robotics/FUEL)。需先编译对应工作空间并 `source` 其 `install/setup.bash`。后续若有其他实用的算法也会继续接入。
 
-[super](https://github.com/ZJU-FAST-Lab/SUPER) 
-[fuel](https://github.com/ZJU-FAST-Lab/SUPER) 
+[super](https://github.com/skyward-cloud/super) 
+[fuel](https://github.com/skyward-cloud/fuel) 
+
 ```bash
 # SUPER：发布 /goal_pose 后开始导航
 ros2 launch super_planner nexus.launch.py
@@ -133,6 +142,8 @@ ros2 launch super_planner nexus.launch.py
 # FUEL：发布 /goal_pose 后开始搜索
 ros2 launch exploration_manager exploration.launch.py
 ```
+
+
 
 ## 可视化与工具
 
