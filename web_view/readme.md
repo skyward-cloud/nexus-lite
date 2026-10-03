@@ -40,7 +40,7 @@ python3 web_view/main.py --debug
 | 起飞 | `POSITION_CONTROL` | `x,y,z,...` |
 | 降落 | `MODE_SWITCH` | `mode: LAND` |
 | 悬停 / 定点 / OFFBOARD / 返航 | `MODE_SWITCH` | 对应 `mode` |
-| 杀机 | `KILL_SWITCH` | （无额外字段） |
+| 停桨 | `KILL_SWITCH` | （无额外字段） |
 
 ## 目录
 

@@ -109,7 +109,7 @@ ros2 launch px4_bridge bridge.launch.py
 
 | 话题                                | 类型                                | 方向                 |
 | --------------------------------- | --------------------------------- | ------------------ |
-| `/px4_bridge/in/task_cmd`         | `px4_bridge_msgs/TaskCommand`     | 任务：解锁、切模式、指点、速度、杀机 |
+| `/px4_bridge/in/task_cmd`         | `px4_bridge_msgs/TaskCommand`     | 任务：解锁、切模式、指点、速度、停桨 |
 | `/px4_bridge/in/realtime_control` | `px4_bridge_msgs/RealtimeControl` | 高频速度 / 姿态          |
 | `/px4_bridge/out/status`          | `px4_bridge_msgs/BridgeStatus`    | 状态回读               |
 
@@ -163,3 +163,4 @@ ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 ```
 
 在 Windows 或其他设备打开 Foxglove 桌面端连接即可。
+可导入布局参数 `config/foxglove_config.json`

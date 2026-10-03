@@ -53,7 +53,7 @@
 | `MODE_SWITCH` | `mode` | 5000 | 切模式；`RETURN_HOME` 走返航流程 |
 | `POSITION_CONTROL` | `x`,`y`,`z` | 1800000 | 指点，直到到点或超时 |
 | `VELOCITY_CONTROL` | `vx`,`vy`,`vz` | 10000 | 速度控制，持续到 deadline |
-| `KILL_SWITCH` | （无） | 5000 | 杀机 |
+| `KILL_SWITCH` | （无） | 5000 | 停桨|
 
 姿态/推力持续控制请用 `/px4_bridge/in/realtime_control`。
 

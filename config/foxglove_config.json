@@ -1,0 +1,399 @@
+{
+    "configById": {
+      "3D!2f9yxg2": {
+        "cameraState": {
+          "perspective": true,
+          "distance": 55.79019635027214,
+          "phi": 48.30280959191784,
+          "thetaOffset": 132.72059267457897,
+          "targetOffset": [
+            3.0986365638678715,
+            -1.9320086053485095,
+            -2.619966494938701e-16
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "targetOrientation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "fovy": 45,
+          "near": 0.5,
+          "far": 5000
+        },
+        "followMode": "follow-pose",
+        "followTf": "world",
+        "scene": {
+          "transforms": {
+            "editable": true,
+            "showLabel": true
+          }
+        },
+        "transforms": {
+          "frame:base_link": {
+            "visible": false
+          },
+          "frame:base_link_frd": {
+            "visible": false
+          },
+          "frame:map": {
+            "visible": false
+          },
+          "frame:map_ned": {
+            "visible": false
+          },
+          "frame:uav1/livox_laser": {
+            "visible": true
+          },
+          "frame:world": {
+            "visible": true
+          },
+          "frame:odom_ned": {
+            "visible": false
+          }
+        },
+        "topics": {
+          "/drone_1_ego_planner_node/grid_map/occupancy_inflate": {
+            "visible": true,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo",
+            "pointSize": 10
+          },
+          "/uav1/mavros/local_position/pose": {
+            "visible": false,
+            "type": "axis"
+          },
+          "/uav1/mavros/vision_pose/pose": {
+            "visible": true,
+            "axisScale": 0.2
+          },
+          "/uav1/sunray/uav_mesh": {
+            "visible": false
+          },
+          "/uav1/sunray/uav_trajectory": {
+            "visible": true,
+            "lineWidth": 0.1,
+            "gradient": [
+              "rgba(124, 107, 255, 1)",
+              "#33ff00ff"
+            ]
+          },
+          "/move_base_simple/goal": {
+            "visible": true,
+            "type": "arrow",
+            "color": "#ff0000ff"
+          },
+          "/drone_1_ego_planner_node/a_star_list": {
+            "visible": false
+          },
+          "/drone_1_ego_planner_node/global_list": {
+            "visible": false
+          },
+          "/drone_1_ego_planner_node/goal_point": {
+            "visible": false
+          },
+          "/drone_1_ego_planner_node/grid_map/occupancy": {
+            "visible": false,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo"
+          },
+          "/drone_1_ego_planner_node/optimal_list": {
+            "visible": true
+          },
+          "/drone_1_ego_planner_node/init_list": {
+            "visible": false
+          },
+          "/lidar/points_world": {
+            "visible": true,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo",
+            "decayTime": 0
+          },
+          "/initialpose": {
+            "visible": false
+          },
+          "/lidar/points_body": {
+            "visible": false,
+            "colorField": "intensity",
+            "colorMode": "colormap",
+            "colorMap": "turbo"
+          },
+          "/pcl_render_node/camera_pose": {
+            "visible": true
+          },
+          "/pcl_render_node/depth": {
+            "visible": true
+          },
+          "/grid_map/occupancy": {
+            "visible": false,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo"
+          },
+          "/ego_planner_node/optimal_list": {
+            "visible": true
+          },
+          "/ego_planner_node/grid_map/occupancy_inflate": {
+            "visible": true,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo",
+            "decayTime": 45.794
+          },
+          "/a_star_list": {
+            "visible": true,
+            "showOutlines": true
+          },
+          "/global_list": {
+            "visible": false
+          },
+          "/goal_point": {
+            "visible": false
+          },
+          "/init_list": {
+            "visible": false
+          },
+          "/visualization/exp_traj": {
+            "visible": true
+          },
+          "/visualization/goal": {
+            "visible": false
+          },
+          "/goal_pose": {
+            "visible": false
+          },
+          "/heading_planner/box": {
+            "visible": false
+          },
+          "/heading_planner/frontier": {
+            "visible": false
+          },
+          "/heading_planner/visib": {
+            "visible": false
+          },
+          "/planning_vis/frontier": {
+            "visible": false
+          },
+          "/planning_vis/prediction": {
+            "visible": false
+          },
+          "/planning_vis/topo_path": {
+            "visible": false
+          },
+          "/planning_vis/trajectory": {
+            "visible": false
+          },
+          "/planning_vis/viewpoints": {
+            "visible": false
+          },
+          "/planning_vis/visib_constraint": {
+            "visible": false
+          },
+          "/planning_vis/yaw": {
+            "visible": false
+          },
+          "/planning/position_cmd_vis": {
+            "visible": false
+          },
+          "/planning/travel_traj": {
+            "visible": false
+          },
+          "/sdf_map/depth_cloud": {
+            "visible": false
+          },
+          "/sdf_map/esdf": {
+            "visible": false
+          },
+          "/sdf_map/occupancy_all": {
+            "visible": false,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo"
+          },
+          "/sdf_map/occupancy_local": {
+            "visible": false,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo"
+          },
+          "/sdf_map/occupancy_local_inflate": {
+            "visible": false,
+            "colorField": "z",
+            "colorMode": "colormap",
+            "colorMap": "turbo"
+          },
+          "/sdf_map/unknown": {
+            "visible": false
+          },
+          "/sdf_map/update_range": {
+            "visible": false
+          }
+        },
+        "layers": {
+          "grid": {
+            "visible": true,
+            "frameLocked": true,
+            "label": "Grid",
+            "instanceId": "e1895207-dffb-4a9c-ba53-e90ad1336536",
+            "layerId": "foxglove.Grid",
+            "size": 10,
+            "divisions": 10,
+            "lineWidth": 1,
+            "color": "#248eff",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "publish": {
+          "type": "pose",
+          "poseTopic": "/goal_pose",
+          "pointTopic": "/clicked_point",
+          "poseEstimateTopic": "/initialpose",
+          "poseEstimateXDeviation": 0.5,
+          "poseEstimateYDeviation": 0.5,
+          "poseEstimateThetaDeviation": 0.26179939
+        },
+        "imageMode": {},
+        "synchronize": false
+      },
+      "RawMessages!3u8k2zs": {
+        "diffEnabled": false,
+        "diffMethod": "custom",
+        "diffTopicPath": "",
+        "showFullMessageForDiff": false,
+        "topicPath": "/fmu/in/trajectory_setpoint",
+        "fontSize": 12,
+        "defaultExpanded": false
+      },
+      "RawMessages!2u6nvpj": {
+        "diffEnabled": false,
+        "diffMethod": "custom",
+        "diffTopicPath": "",
+        "showFullMessageForDiff": false,
+        "topicPath": "/drone260/odom",
+        "fontSize": 12,
+        "defaultExpanded": true,
+        "expansion": {
+          "header": "c",
+          "orientation~pose~pose": "c",
+          "angular~twist~twist": "c",
+          "twist": "c"
+        }
+      },
+      "Publish!1d7q7ap": {
+        "buttonText": "ARM",
+        "buttonTooltip": "",
+        "advancedView": false,
+        "value": "{\n  \"task_id\": \"arm\",\n  \"task_type\": \"ARMING\",\n  \"deadline_ms\": 0,\n  \"arm\": true,\n  \"confirm_current_mode\": false,\n  \"mode\": \"\",\n  \"x\": 0,\n  \"y\": 0,\n  \"z\": 0,\n  \"vx\": 0,\n  \"vy\": 0,\n  \"vz\": 0,\n  \"yaw\": 0,\n  \"arrival_radius_m\": 0,\n  \"arrival_dz_m\": 0,\n  \"arrival_speed_mps\": 0\n}",
+        "topicName": "/px4_bridge/in/task_cmd",
+        "datatype": "px4_bridge_msgs/msg/TaskCommand"
+      },
+      "Publish!46jgory": {
+        "buttonText": "point",
+        "buttonTooltip": "",
+        "advancedView": false,
+        "value": "{\n  \"task_id\": \"point\",\n  \"task_type\": \"POSITION_CONTROL\",\n  \"deadline_ms\": 0,\n  \"arm\": false,\n  \"confirm_current_mode\": false,\n  \"mode\": \"\",\n  \"x\": 3,\n  \"y\": 0,\n  \"z\": 1.5,\n  \"vx\": 0,\n  \"vy\": 0,\n  \"vz\": 0,\n  \"yaw\": 0,\n  \"arrival_radius_m\": 0,\n  \"arrival_dz_m\": 0,\n  \"arrival_speed_mps\": 0\n}",
+        "topicName": "/px4_bridge/in/task_cmd",
+        "datatype": "px4_bridge_msgs/msg/TaskCommand"
+      },
+      "Publish!3stvgdt": {
+        "buttonText": "TAKEOFF",
+        "buttonTooltip": "",
+        "advancedView": false,
+        "value": "{\n  \"task_id\": \"takeoff\",\n  \"task_type\": \"POSITION_CONTROL\",\n  \"deadline_ms\": 0,\n  \"arm\": false,\n  \"confirm_current_mode\": false,\n  \"mode\": \"\",\n  \"x\": 0,\n  \"y\": 0,\n  \"z\": 1.5,\n  \"vx\": 0,\n  \"vy\": 0,\n  \"vz\": 0,\n  \"yaw\": 0,\n  \"arrival_radius_m\": 0,\n  \"arrival_dz_m\": 0,\n  \"arrival_speed_mps\": 0\n}",
+        "topicName": "/px4_bridge/in/task_cmd",
+        "datatype": "px4_bridge_msgs/msg/TaskCommand"
+      },
+      "Publish!4fa6tqi": {
+        "buttonText": "Land",
+        "buttonTooltip": "",
+        "advancedView": false,
+        "value": "{\n  \"task_id\": \"land\",\n  \"task_type\": \"MODE_SWITCH\",\n  \"deadline_ms\": 0,\n  \"arm\": false,\n  \"confirm_current_mode\": false,\n  \"mode\": \"LAND\",\n  \"x\": 0,\n  \"y\": 0,\n  \"z\": 0,\n  \"vx\": 0,\n  \"vy\": 0,\n  \"vz\": 0,\n  \"yaw\": 0,\n  \"arrival_radius_m\": 0,\n  \"arrival_dz_m\": 0,\n  \"arrival_speed_mps\": 0\n}",
+        "topicName": "/px4_bridge/in/task_cmd",
+        "datatype": "px4_bridge_msgs/msg/TaskCommand"
+      },
+      "Plot!1kyuho7": {
+        "paths": [
+          {
+            "timestampMethod": "receiveTime",
+            "value": "/drone260/odom.pose.pose.position.x",
+            "enabled": true,
+            "color": "#4e98e2",
+            "id": "4057480b-00f5-4c5b-9ae8-314b65dcadde"
+          },
+          {
+            "timestampMethod": "receiveTime",
+            "value": "/drone260/odom.pose.pose.position.y",
+            "enabled": true,
+            "color": "#f5774d",
+            "id": "b24d779c-1d1b-4684-a2a5-fdb52edbbea2"
+          },
+          {
+            "timestampMethod": "receiveTime",
+            "value": "/drone260/odom.pose.pose.position.z",
+            "enabled": true,
+            "color": "#f7df71",
+            "id": "729c2d09-5d59-4c5f-a752-fa8b590841b1"
+          }
+        ]
+      }
+    },
+    "globalVariables": {},
+    "userNodes": {
+      "908808e2-4d48-4733-b35c-4694ea8a64ac": {
+        "sourceCode": "import { Input } from \"./types\";\nimport { Color, Pose } from \"@foxglove/schemas\";\n\nexport const inputs = [\"/uav1/mavros/imu/data\"];\nexport const output = \"/s_script/json_data\";\n\ntype Output = {\n  pose: Pose;\n};\n\nexport default function script(event: Input<\"/uav1/mavros/imu/data\">): Output {\n  return {\n    pose: {\n      position: { x: 1, y: 1, z: 1 },\n      orientation: { x: 1, y: 1, z: 1, w: 1 },\n    },\n  };\n}\n",
+        "name": "908808e2"
+      }
+    },
+    "playbackConfig": {
+      "speed": 1
+    },
+    "layout": {
+      "direction": "row",
+      "first": "3D!2f9yxg2",
+      "second": {
+        "first": {
+          "first": {
+            "first": "RawMessages!3u8k2zs",
+            "second": "RawMessages!2u6nvpj",
+            "direction": "row"
+          },
+          "second": "Plot!1kyuho7",
+          "direction": "column"
+        },
+        "second": {
+          "first": {
+            "first": "Publish!1d7q7ap",
+            "second": "Publish!46jgory",
+            "direction": "column"
+          },
+          "second": {
+            "first": "Publish!3stvgdt",
+            "second": "Publish!4fa6tqi",
+            "direction": "column"
+          },
+          "direction": "row",
+          "splitPercentage": 53.09803921568626
+        },
+        "direction": "column",
+        "splitPercentage": 76.10619469026548
+      },
+      "splitPercentage": 64.5625
+    }
+  }
